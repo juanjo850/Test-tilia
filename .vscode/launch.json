@@ -1,0 +1,14 @@
+{
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Spring Boot-LaundryApplication<laundry>",
+            "request": "launch",
+            "cwd": "${workspaceFolder}",
+            "mainClass": "com.service.laundry.LaundryApplication",
+            "projectName": "laundry",
+            "args": "",
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
