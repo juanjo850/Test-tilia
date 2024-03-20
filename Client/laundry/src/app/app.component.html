@@ -1,14 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Laundry</title>
-</head>
 <body>
-  <h1 class="fixed bg-primary p-3">Laundry Service</h1>
+  <div class="bg-primary p-3">
+    <h1>Laundry Service</h1>
+  </div>
   <div class="">
-    <h2>Add Clothing</h2>
+    <h2 class="relative bg-primary">Add Clothing</h2>
     <form>
       <label>Name:</label>
       <input type="text" required>
@@ -17,12 +12,24 @@
       <button type="submit">Add</button>
     </form>
   </div>
-  <div>
-    <h2>All Clothing</h2>
-    <ul>
-      <li>
-      </li>
-    </ul>
-  </div>
+
+  <p-table [value]="clothing" styleClass="p-datatable-striped" [tableStyle]="{ 'min-width': '50rem' }" [lazy]="true" (onLazyLoad)="loadClothing()">
+    <ng-template pTemplate="header">
+        <tr>
+          <th>Name</th>
+          <th>Size</th>
+          <th>Color</th>
+          <th>Status</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-cloth>
+        <tr>
+          <td>{{ cloth.name }}</td>
+          <td>{{ cloth.size }}</td>
+          <td>{{ cloth.color }}</td>
+          <td>{{ cloth.status }}</td>
+        </tr>
+    </ng-template>
+  </p-table>
 </body>
-</html>
+<router-outlet></router-outlet>
